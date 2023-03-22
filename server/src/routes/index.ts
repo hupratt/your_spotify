@@ -32,9 +32,9 @@ import { getWithDefault } from '../tools/env';
 const router = Router();
 export default router;
 
-router.get('/', (_, res) => {
-  res.status(200).send('Hello !');
-});
+// router.get('/', (_, res) => {
+//   res.status(200).send('Hello !');
+// });
 
 router.post('/logout', async (_, res) => {
   res.clearCookie('token');

@@ -11,7 +11,7 @@ import globalRouter from './routes/global';
 import artistRouter from './routes/artist';
 import importRouter from './routes/importer';
 import trackRouter from './routes/track';
-import { get } from './tools/env';
+
 const app = express();
 
 app.options("*", cors({ origin: 'http://localhost:3001', optionsSuccessStatus: 200 }));
@@ -31,5 +31,11 @@ app.use('/global', globalRouter);
 app.use('/artist', artistRouter);
 app.use('/track', trackRouter);
 app.use('/', importRouter);
+app.all('*', function(req, res) {
+  const jsonPath = path.join(__dirname, '..', '..', 'client', 'build','index.html');
+  // console.log('=== jsonPath server.js [25] ===', jsonPath);
+  res.sendFile(path.resolve(jsonPath));
+});
+
 
 export default app;
