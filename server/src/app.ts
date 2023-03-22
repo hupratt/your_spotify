@@ -14,18 +14,9 @@ import trackRouter from './routes/track';
 import { get } from './tools/env';
 const app = express();
 
-let corsValue = get('CORS')?.split(',');
-if (corsValue?.[0] === 'all') {
-  corsValue = undefined;
-}
+app.options("*", cors({ origin: 'http://localhost:3001', optionsSuccessStatus: 200 }));
 
-app.use(
-  cors({
-    origin: true,
-    methods: ['GET', 'PUT', 'POST', 'DELETE'],
-    credentials: true,
-  }),
-);
+app.use(cors({ origin: "http://localhost:3001", optionsSuccessStatus: 200 }));
 
 app.use(morgan('dev'));
 app.use(cookieParser());
