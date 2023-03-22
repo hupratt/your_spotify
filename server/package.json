@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node lib/bin/www",
     "start:watch": "nodemon lib/bin/www",
-    "build": "typescript && cp -r src/public lib/",
-    "build:watch": "typescript --watch",
+    "build": "tsc && cp -r src/public lib/",
+    "build:watch": "tsc --watch",
     "dev": "nodemon src/bin/www.ts",
     "migrate": "node ./lib/migrations.js",
     "lint": "eslint ."
