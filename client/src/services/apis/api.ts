@@ -21,7 +21,7 @@ import {
 
 const axios = Axios.create({
   /* @ts-ignore-next-line */
-  baseURL: window.API_ENDPOINT,
+  baseURL: `${process.env.API_ENDPOINT}`,
   withCredentials: true,
 });
 
