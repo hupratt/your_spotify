@@ -12,6 +12,11 @@ router.get('/preferences', async (req, res) => {
   return res.status(200).send(preferences);
 });
 
+router.get('/preferences?token=', async (req, res) => {
+  const preferences = await getGlobalPreferences();
+  return res.status(200).send(preferences);
+});
+
 const updateGlobalPreferencesSchema = z.object({
   allowRegistrations: z.boolean(),
 });

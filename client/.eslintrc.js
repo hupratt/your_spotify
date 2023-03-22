@@ -22,6 +22,7 @@ module.exports = {
   ignorePatterns: ['.eslintrc.js'],
   plugins: ['@typescript-eslint'],
   rules: {
+'prettier/prettier': 0,
     'max-classes-per-file': 'off',
     'consistent-return': 'off',
     'no-continue': 'off',

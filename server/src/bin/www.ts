@@ -20,6 +20,7 @@ import { repairDatabase } from '../tools/repair';
 
 const port = getWithDefault('PORT', 8080);
 app.set('port', port);
+console.error(`server started on port ${port}`);
 
 /**
  * Create HTTP server.
