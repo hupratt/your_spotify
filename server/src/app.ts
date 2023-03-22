@@ -21,7 +21,7 @@ if (corsValue?.[0] === 'all') {
 
 app.use(
   cors({
-    origin: corsValue ?? true,
+    origin: true,
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
     credentials: true,
   }),
