@@ -14,13 +14,12 @@ import trackRouter from './routes/track';
 
 const app = express();
 
-app.options("*", cors({ origin: 'http://localhost:3001', optionsSuccessStatus: 200 }));
+app.options("*", cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
 
-app.use(cors({ origin: "http://localhost:3001", optionsSuccessStatus: 200 }));
+app.use(cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 }));
 
 app.use(morgan('dev'));
 app.use(cookieParser());
-app.use('/static', express.static( path.join(__dirname, '..', '..', 'client', 'build','static')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -31,6 +30,7 @@ app.use('/global', globalRouter);
 app.use('/artist', artistRouter);
 app.use('/track', trackRouter);
 app.use('/', importRouter);
+app.use('/static', express.static( path.join(__dirname, '..', '..', 'client', 'build','static')));
 app.all('*', function(req, res) {
   const jsonPath = path.join(__dirname, '..', '..', 'client', 'build','index.html');
   // console.log('=== jsonPath server.js [25] ===', jsonPath);
