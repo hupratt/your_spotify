@@ -1,5 +1,3 @@
-import { get } from '../env';
-
 
 export const credentials = {
   spotify: {

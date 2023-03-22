@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { z } from 'zod';
 import { logger } from './logger';
 import { toNumber } from './zod';

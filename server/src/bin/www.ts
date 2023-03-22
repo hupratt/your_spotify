@@ -3,6 +3,7 @@
 /**
  * Module dependencies.
  */
+require('dotenv').config()
 
 import http from 'http';
 import { dbLoop } from '../spotify/looper';

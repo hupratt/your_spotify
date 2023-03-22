@@ -12,8 +12,6 @@ import artistRouter from './routes/artist';
 import importRouter from './routes/importer';
 import trackRouter from './routes/track';
 import { get } from './tools/env';
-
-require('dotenv').config()
 const app = express();
 
 let corsValue = get('CORS')?.split(',');

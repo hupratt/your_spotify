@@ -43,7 +43,7 @@ router.get('/spotify/callback', withGlobalPreferences, async (req, res) => {
     let user = await getUserFromField('spotifyId', spotifyMe.id);
     if (!user) {
       if (!globalPreferences.allowRegistrations) {
-        return res.redirect(`${get('CLIENT_ENDPOINT')}/registrations-disabled`);
+        return res.redirect(`${process.env.CLIENT_ENDPOINT}/registrations-disabled`);
       }
       const nbUsers = await getNumberOfUsers();
       user = await createUser(
@@ -60,7 +60,7 @@ router.get('/spotify/callback', withGlobalPreferences, async (req, res) => {
   } catch (e) {
     logger.error(e);
   }
-  return res.redirect(get('CLIENT_ENDPOINT'));
+  return res.redirect(`${process.env.CLIENT_ENDPOINT}`);
 });
 
 router.get('/spotify/me', logged, withHttpClient, async (req, res) => {
