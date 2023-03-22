@@ -20,7 +20,7 @@ app.use(cors({ origin: "http://localhost:3001", optionsSuccessStatus: 200 }));
 
 app.use(morgan('dev'));
 app.use(cookieParser());
-app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static( path.join(__dirname, '..', '..', 'client', 'build','static')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
