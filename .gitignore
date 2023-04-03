@@ -106,3 +106,4 @@ docker-compose-personal.yml
 client/public/index.html
 client/public/variables.js
 docker-compose.yml
+**/dump/**
